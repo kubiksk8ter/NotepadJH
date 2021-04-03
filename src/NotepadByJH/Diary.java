@@ -68,7 +68,7 @@ public class Diary {
      * Delete list and load new one from ArrayList
      * @param list
      */
-    public void nacti(List list) {        
+    public void load(List list) {        
         list.removeAll();
         diary.forEach((s) -> {
             list.add(s);
@@ -79,7 +79,7 @@ public class Diary {
      * also in pozn.txt file
      * @param TA 
      */   
-    public void uloz(JTextArea TA) {
+    public void save(JTextArea TA) {
         dateTime = LocalDateTime.now();
         date = dateTime.format(DateTimeFormatter.ofPattern("d.M.y H:m")) + ": ";
         String s = date + TA.getText();
@@ -100,11 +100,11 @@ public class Diary {
      * @param index
      * @param s 
      */
-    public void uprav(int index, String s) {
+    public void edit(int index, String s) {
         diary.set(index, s);
     }
     
-    public String getDatum() {
+    public String getDate() {
         dateTime = LocalDateTime.now();
         date = dateTime.format(DateTimeFormatter.ofPattern("d.M.y H:m")) + ": ";
         return date;
